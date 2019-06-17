@@ -1,0 +1,212 @@
+html{
+    font-size:62.5%;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+//this mixin is used to centralize a block element found in any div with position set to relative
+@mixin line_centralize{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+$middle-font-size:1.6rem;
+
+.middle__block{
+    float:left;
+    width:40%;
+    height:90%;
+    font-family: comic sans ms;
+
+    .middle__block--upper{
+        font-size:$middle-font-size;
+        height:25%;
+       position:relative;
+
+       .heading__container{
+           position:relative;
+           height:40%;
+           
+
+            .heading_wrapper{
+                @include line_centralize();
+                top:40%;
+                height: auto;
+                
+            }
+
+        }
+
+        .message__container{
+            position: relative;
+            height:60%;
+            
+            .message_wrapper{
+                @include line_centralize();
+                width:100%;
+                height: auto;
+                text-align: center;
+                bottom:0;
+
+            }
+        }
+    }
+
+
+    .middle__block--lower{
+        height:75%;
+
+        form{
+
+        height:100%;
+
+        .form_table{
+            
+            width:100%;
+            height:100%;
+
+            tr{
+                width:100%;
+                height:20%;
+                text-align:center;
+                td{
+                    width:50%;
+                }
+
+                input{
+                    border:none;
+                    height:70%;
+                    width:90%;
+                    border-radius:5px;
+                    font-size:2rem;
+                    padding-left:2.5rem;
+                    padding-bottom: 1rem;
+                }
+                .message{
+                    height:100%;
+                }
+
+                .sendCell{
+                    text-align: right;
+                    .send{
+                        cursor: pointer;
+                        background-color: rgb(1,222,145);
+                        color:white;
+                        width:70%;
+                        height:50%;
+                        padding:0;
+                    }
+                    .send:hover{
+                        background-color: rgb(58, 240, 176);
+                    }
+                }
+                .cancelCell{
+                    text-align: left;
+
+                .cancel{
+                    cursor: pointer;
+                    background-color: rgb(247,247,247);
+                    width:70%;
+                    height:50%;
+                    padding:0;
+
+                }
+
+                .cancel:hover{
+                    background-color: rgb(226, 226, 226);
+                }
+                }
+                
+                
+                @media (max-width:971px) {
+            
+                    input{
+                        font-size: $middle-font-size + .1;
+
+                        height:60%;
+                    }
+
+                    .messages{
+                        height:50%;
+                    }
+                    
+                    
+                    
+                    
+                }
+
+
+
+            }
+
+            .msgRow{
+                height:40%;
+                width:100%;
+                .msgCell{
+                    width:100%;
+                    .message{
+                        font-size:2rem;
+                        width:90%;
+                        height:80%;
+                        border-radius:5px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        border:none;
+                        resize: none;
+                        padding-left:2.5rem;
+                        padding-top:2.5rem;
+                    }
+                }
+            }
+            
+
+        }
+          
+    }
+
+    }
+
+    //These media queries adjust the font size depending on the size of the screen
+    @media (max-width:971px) {
+
+        .middle__block--upper{
+            $middle-font-size:$middle-font-size - .2;
+            font-size:$middle-font-size;
+            
+        } 
+        
+    }
+
+    @media (max-width:764px) {
+
+        .middle__block--upper{
+            $middle-font-size:$middle-font-size - .4;
+            font-size:$middle-font-size;
+            
+        }
+
+    }
+
+    @media (max-width:656px) {
+
+        .heading_wrapper{
+            $middle-font-size:$middle-font-size - .6;
+            font-size:$middle-font-size;
+            text-align:center;
+            
+        }
+    }
+
+    @media (max-width:412px) {
+
+        .middle__block--upper{
+            $middle-font-size:$middle-font-size - .4;
+            font-size:$middle-font-size;
+            
+        }
+    }
+}
