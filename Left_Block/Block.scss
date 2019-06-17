@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@import '../Header/header.scss';
+
+$block-width:25%;
+
+$block-height:49%;
+
+.left__block{
+
+    height: 90%;
+    float:left;
+    width:30%;
+
+    .placeholder{
+        height:15%;
+        width:100%;
+    }
+
+    .left__block--upper{
+        height: 30%;
+        .upblocks{
+            height:$block-height;
+            position: relative;
+
+            .blockup{
+                width:$block-width;
+                height:50%;
+                display:block;
+                position: absolute;
+                top:10%;
+                left:10%;
+            }
+
+        }
+
+        .downblocks{
+            height:50%;
+            display:block;
+            position:relative;
+            
+
+            .blockdown{
+                width:$block-width;
+                height:$block-height;
+                position: absolute;  
+                top:0;
+                left:60%;
+                transform:translateX(-50%);
+            }
+        }
+    }
+
+    .placeholder2{
+        height:5%;
+        width:100%;
+    }
+
+    .left__block--lower{
+
+        height:50%;
+        .people{
+            width:100%;
+            height:100%;
+        }
+    }
+
+}
